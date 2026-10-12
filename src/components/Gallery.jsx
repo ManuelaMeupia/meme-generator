@@ -1,8 +1,10 @@
+import { FaSave } from "react-icons/fa";
+
 export default function Gallery({ items, onSelect, onDelete }) {
   if (!items.length) {
     return (
       <div className="gallery-empty">
-        Aucun mème enregistré pour le moment. Clique sur <strong>💾 Enregistrer</strong> pour
+        Aucun mème enregistré pour le moment. Clique sur <strong><FaSave /> Enregistrer</strong> pour
         ajouter ta création ici.
       </div>
     )

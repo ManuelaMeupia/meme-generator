@@ -1,3 +1,4 @@
+import { FaImage} from "react-icons/fa";
 import { useRef, useState } from 'react'
 
 export default function ImageUploader({ onImageSelected }) {
@@ -11,7 +12,7 @@ export default function ImageUploader({ onImageSelected }) {
     if (!file) return
 
     if (!file.type.startsWith('image/')) {
-      setError('Format non supporté. Choisis une image (PNG, JPG, WEBP…).')
+      setError('Format non supporté. Choisis une image (PNG, JPG, JPEG, WEBP…).')
       return
     }
 
@@ -53,7 +54,7 @@ export default function ImageUploader({ onImageSelected }) {
             e.target.value = ''
           }}
         />
-        <span className="dropzone-icon">🖼️</span>
+        <span className="dropzone-icon"><FaImage /></span>
         <span className="dropzone-text">Clique ou glisse une image ici</span>
         <span className="dropzone-hint">PNG, JPG, WEBP — max 15 Mo</span>
       </div>

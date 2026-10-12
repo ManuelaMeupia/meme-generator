@@ -1,8 +1,5 @@
-/**
- * Charge une image depuis une URL (blob ou dataURL)
- * et renvoie un HTMLImageElement une fois chargé.
- */
-export function loadImage(src) {
+//Charge une image depuis une URL (blob ou dataURL) et renvoie un HTMLImageElement une fois chargé.
+ export function loadImage(src) {
   return new Promise((resolve, reject) => {
     const img = new Image()
     img.onload = () => resolve(img)
@@ -13,10 +10,7 @@ export function loadImage(src) {
 
 export const MAX_CANVAS_WIDTH = 900
 
-/**
- * Dessine un bloc de texte (haut ou bas) sur le canvas,
- * avec un contour noir (style mème classique).
- */
+//Dessine un bloc de texte (haut ou bas) sur le canvas,avec un contour noir (style mème classique).
 function drawTextBlock(ctx, rawText, x, y, anchor, maxWidth, style) {
   const { fontSize, family, color, strokeColor } = style
   const lines = rawText
@@ -57,9 +51,7 @@ function drawTextBlock(ctx, rawText, x, y, anchor, maxWidth, style) {
   })
 }
 
-/**
- * Rendu complet du mème sur le canvas.
- */
+//Rendu complet du mème sur le canvas.
 export function renderMeme(canvas, image, options = {}) {
   const ctx = canvas.getContext('2d')
 
@@ -83,7 +75,7 @@ export function renderMeme(canvas, image, options = {}) {
     ctx.font = '500 20px system-ui, sans-serif'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
-    ctx.fillText('🖼️  Charge une image pour commencer', canvas.width / 2, canvas.height / 2)
+    ctx.fillText(' Charge une image pour commencer', canvas.width / 2, canvas.height / 2)
     return
   }
 
@@ -118,17 +110,12 @@ export function renderMeme(canvas, image, options = {}) {
   )
 }
 
-/**
- * Convertit un canvas en Blob PNG.
- */
+//Convertit un canvas en Blob PNG
 export function canvasToBlob(canvas) {
   return new Promise((resolve) => canvas.toBlob(resolve, 'image/png'))
 }
 
-/**
- * Génère une miniature JPEG compressée pour la galerie
- * (localStorage a une limite d'environ 5 Mo).
- */
+//Génère une miniature JPEG compressée pour la galerie (localStorage a une limite d'environ 5 Mo)
 export function canvasToThumb(source, maxWidth = 700, quality = 0.78) {
   const tmp = document.createElement('canvas')
   const scale = Math.min(1, maxWidth / source.width)
