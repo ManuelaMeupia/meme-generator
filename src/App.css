@@ -20,7 +20,6 @@
   gap: 20px;
 }
 
-/* ---------- Dropzone ---------- */
 .dropzone {
   display: flex;
   flex-direction: column;
@@ -61,7 +60,6 @@
   font-size: 14px;
 }
 
-/* ---------- Bouton ---------- */
 .btn {
   align-self: flex-start;
   padding: 10px 16px;
@@ -79,7 +77,6 @@
   background: #2a2a3d;
 }
 
-/* ---------- Éditeur ---------- */
 .editor {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
@@ -112,7 +109,6 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
 }
 
-/* ---------- Contrôles ---------- */
 .controls {
   display: flex;
   flex-direction: column;
@@ -151,7 +147,6 @@
   border-color: #7c5cff;
 }
 
-/* ---------- Slider de taille ---------- */
 .label-row {
   display: flex;
   justify-content: space-between;
@@ -170,7 +165,6 @@
   cursor: pointer;
 }
 
-/* ---------- Couleurs ---------- */
 .colors {
   flex-direction: row !important;
   gap: 12px;
@@ -193,7 +187,6 @@ input[type='color'] {
   cursor: pointer;
 }
 
-/* ---------- Checkbox ---------- */
 .checkbox {
   display: flex;
   align-items: center;
@@ -210,14 +203,12 @@ input[type='color'] {
   cursor: pointer;
 }
 
-/* ---------- Colonne d'aperçu ---------- */
 .preview-column {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* ---------- Actions ---------- */
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -238,7 +229,6 @@ input[type='color'] {
   cursor: not-allowed;
 }
 
-/* ---------- Toast ---------- */
 .toast {
   position: fixed;
   bottom: 24px;
@@ -271,7 +261,6 @@ input[type='color'] {
   }
 }
 
-/* ---------- Galerie ---------- */
 .gallery-section {
   margin-top: 20px;
   padding: 20px;
@@ -359,7 +348,6 @@ input[type='color'] {
   color: #fff;
 }
 
-/* ---------- Page d'accueil ---------- */
 .home {
   min-height: 100vh;
   display: flex;
@@ -434,7 +422,6 @@ input[type='color'] {
   margin-top: 8px;
 }
 
-/* ---------- Features ---------- */
 .home-features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -481,7 +468,6 @@ input[type='color'] {
   line-height: 1.5;
 }
 
-/* ---------- Header éditeur ---------- */
 .app-header {
   position: relative;
 }
@@ -502,4 +488,58 @@ input[type='color'] {
   font-size: 12px;
   min-width: auto;
   align-self: flex-start;
+}
+
+.animated-title {
+  animation: 
+    titleFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both,
+    titleFloat 4s ease-in-out infinite 0.9s;
+}
+
+.animated-title .gradient {
+  background: linear-gradient(
+    90deg,
+    #a78bfa 0%,
+    #ff5c8a 25%,
+    #ffb84d 50%,
+    #ff5c8a 75%,
+    #a78bfa 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
 }

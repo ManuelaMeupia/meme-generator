@@ -36,8 +36,8 @@ export default function App() {
 
     const [image, setImage] = useState(null)
 
-  const [topText, setTopText] = useState('QUAND TU CODES')
-  const [bottomText, setBottomText] = useState('ET QUE ÇA MARCHE')
+  const [topText, setTopText] = useState('')
+  const [bottomText, setBottomText] = useState('')
 
   const [fontSize, setFontSize] = useState(56)
   const [fontFamily, setFontFamily] = useState('Impact')
@@ -280,7 +280,7 @@ export default function App() {
                 rows={2}
                 value={bottomText}
                 onChange={(e) => setBottomText(e.target.value)}
-                placeholder="...ET QUE ÇA MARCHE"
+                // placeholder="...ET QUE ÇA MARCHE"
               />
             </div>
 
@@ -345,21 +345,21 @@ export default function App() {
               </div>
             </div>
 
-            <label className="checkbox">
+            {/* <label className="checkbox">
               <input
                 type="checkbox"
                 checked={uppercase}
                 onChange={(e) => setUppercase(e.target.checked)}
               />
               <span>Texte en MAJUSCULES</span>
-            </label>
+            </label> */}
           </div>
         </div>
 
         <section className="gallery-section">
           <div className="gallery-header">
             <h2>Galerie</h2>
-            <span className="muted">{gallery.length} mème(s)</span>
+            <span className="muted">{gallery.length} meme(s)</span>
           </div>
           <Gallery
             items={gallery}

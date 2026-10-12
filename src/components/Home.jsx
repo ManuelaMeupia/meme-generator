@@ -7,7 +7,7 @@ export default function Home({ onStart }) {
       <div className="home-hero">
         <div className="home-badge">Générateur de mèmes en ligne</div>
 
-        <h1 className="home-title">
+        <h1 className="home-title animated-title">
           Crée des mèmes hilarants en quelques secondes
         </h1>
 
